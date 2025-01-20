@@ -40,4 +40,35 @@ const teamMembers = [
       email: "danielaamet@team.com",
       img: "img/female3.png"
     }
-  ];
+];
+
+const list = document.getElementById('cards-list');
+
+let cards = "";
+
+for (let i = 0; i < teamMembers.length; i++){
+  let teamMember = teamMembers[i];
+  
+/*   let name = teamMember.name;
+  let role = teamMember.role;
+  let email = teamMember.email;
+  let img = teamMember.img; */
+ 
+  const { name, role, email, img } = teamMember;
+
+  cards += `
+  <li>
+  <div class="member-image">
+      <img src="${img}" class="member-picture">
+  </div>
+  <h2 class="member-name">${name}</h2>
+  <h3 class="member-role"> ${role}</h3>
+  <h4 class="member-email">${email}</h4>
+  </li>`   
+} 
+  
+list.innerHTML = cards;
+
+ 
+
+

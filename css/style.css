@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-top: 80px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    color: #e33470;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#cards-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 40px;
+}
+
+.card {
+    display: flex;
+    width: 33%;
+    background-color: black;
+}
+
+.member-image {
+    width: 70%;
+    float: left;
+}
+
+.member-picture {
+    width: 100%;
+}
