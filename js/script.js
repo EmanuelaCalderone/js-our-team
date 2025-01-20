@@ -1,7 +1,4 @@
-/* Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.
-(trovate l’array del team all’interno della cartella in allegato)
-Bonus
-Rendere l’esercizio responsive, mandando a capo le card */
+/* Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.*/
 
 const teamMembers = [
     {
@@ -42,11 +39,15 @@ const teamMembers = [
     }
 ];
 
+//creo la variabile che conterrà la lista
 const list = document.getElementById('cards-list');
 
+//creo le card inizializzandole a una stringa vuota
 let cards = "";
 
+//con un ciclo itero per tutti gli oggetti dell'array
 for (let i = 0; i < teamMembers.length; i++){
+  //assegno una variabile a ogni oggetto
   let teamMember = teamMembers[i];
   
 /*   let name = teamMember.name;
@@ -54,19 +55,24 @@ for (let i = 0; i < teamMembers.length; i++){
   let email = teamMember.email;
   let img = teamMember.img; */
  
+  //destrutturo l'oggetto estrapolando i valori delle singole proprietà
   const { name, role, email, img } = teamMember;
 
+  //aggiungo un li che contiene una card a ogni ciclo
   cards += `
-  <li>
-  <div class="member-image">
-      <img src="${img}" class="member-picture">
-  </div>
-  <h2 class="member-name">${name}</h2>
-  <h3 class="member-role"> ${role}</h3>
-  <h4 class="member-email">${email}</h4>
-  </li>`   
+    <li class=member>
+    <div class="member-image">
+        <img src="${img}" class="member-picture">
+    </div>
+    <div class="details">
+      <h2 class="member-name">${name}</h2>
+      <h3 class="member-role"> ${role}</h3>
+      <h4 class="member-email">${email}</h4>
+    </div>
+    </li>`;   
 } 
   
+//aggiungo nell'html le class alla lista
 list.innerHTML = cards;
 
  
